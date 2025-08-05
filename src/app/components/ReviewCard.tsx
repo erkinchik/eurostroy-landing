@@ -1,11 +1,12 @@
 import { Card } from "@/app/components/ui/card";
 import Image from "next/image";
 import {Check, Star} from "lucide-react";
+import {Avatar, AvatarFallback, AvatarImage} from "@/app/components/ui/avatar";
 
 function ReviewCard() {
     return (
-        <Card className="flex flex-col md:flex-row w-full overflow-hidden rounded-xl shadow-lg p-6">
-            <div className="relative h-64 md:h-auto md:w-1/3">
+        <Card className="flex flex-col md:flex-row w-full overflow-hidden rounded-xl border-none p-6 h-full shadow-none bg-[#F8F8F8]">
+            <div className="relative h-full md:w-1/2 md:h-[540px]">
                 <Image
                     src="/slide.png"
                     alt="Product image"
@@ -14,56 +15,42 @@ function ReviewCard() {
                 />
             </div>
 
-            <div className="md:w-2/3 md:pl-6 flex flex-col">
-                <div className="flex items-start gap-4 pb-6 border-b">
-                    <div className="relative w-12 h-12 rounded-full overflow-hidden">
-                        <Image
-                            src="/avatar.jpg"
-                            alt="User avatar"
-                            fill
-                            className="object-cover"
-                        />
-                    </div>
+            <div className="md:w-1/2 flex flex-col">
+                <div className="flex items-start gap-2">
+                    <Avatar className='w-12 h-12'>
+                        <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                        <AvatarFallback>CN</AvatarFallback>
+                    </Avatar>
 
                     <div className="flex-1">
                         <div className="flex justify-between items-start">
                             <div>
-                                <h3 className="font-semibold">Алексей Петров</h3>
+                                <h3 className="font-semibold">Александр</h3>
                                 <p className="text-sm text-muted-foreground">г. Бишкек</p>
                             </div>
-                            <span className="text-sm text-muted-foreground">15.05.2024</span>
+                            <div>
+                                <div className="flex items-center mt-2">
+                                    {[...Array(5)].map((_, i) => (
+                                        <Star
+                                            key={i}
+                                            className={`w-5 h-5 ${i < 4 ? 'text-[#FFA502] fill-[#FFA502]' : 'text-[#D9D9D9] fill-[#D9D9D9]'}`}
+                                        />
+                                    ))}
+                                </div>
+                                <span className="text-sm text-muted-foreground">16 апреля</span> &nbsp;
+                                <span className="text-sm text-muted-foreground">13:54</span>
+                            </div>
                         </div>
 
-                        <div className="flex items-center mt-2">
-                            {[...Array(5)].map((_, i) => (
-                                <Star
-                                    key={i}
-                                    className={`w-4 h-4 ${i < 4 ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`}
-                                />
-                            ))}
-                            <span className="ml-2 text-sm font-medium">4.0</span>
-                        </div>
+
                     </div>
                 </div>
 
-                <div className="pt-6 flex-1">
-                    <p className="text-muted-foreground">
-                        Очень доволен качеством продукции! Заказывал строительные материалы для ремонта дома.
-                        Всё пришло в срок, без повреждений. Особенно порадовала профессиональная консультация
-                        менеджера, который помог подобрать оптимальные материалы под мой бюджет.
-                        Обязательно буду рекомендовать вашу компанию друзьям!
+                <div className="pt-4 flex-1">
+                    <p className="text-black text-md">
+                        Сотрудничаю с этой компанией уже несколько лет и всегда остаюсь доволен. Первый раз обратился к ним, когда делал капитальный ремонт в квартире — выбор материалов впечатлил, всё было в наличии, а консультанты помогли подобрать оптимальные варианты под мой бюджет. После этого опыта решил заказать материалы и для строительства загородного дома.
+                        Хочу отметить высокое качество продукции — все материалы соответствуют заявленным характеристикам и стандартам. Доставка всегда пунктуальная, что для меня было очень важно, так как сроки строительства были жёсткими. Особую благодарность хочу выразить менеджерам — всегда оперативно отвечают на вопросы, дают полезные рекомендации и готовы помочь в любой ситуации.
                     </p>
-
-                    <div className="mt-6 grid grid-cols-2 gap-3">
-                        <div className="flex items-center space-x-2 text-sm">
-                            <Check className="h-4 w-4 text-green-500" />
-                            <span>Качество материалов</span>
-                        </div>
-                        <div className="flex items-center space-x-2 text-sm">
-                            <Check className="h-4 w-4 text-green-500" />
-                            <span>Быстрая доставка</span>
-                        </div>
-                    </div>
                 </div>
             </div>
         </Card>

@@ -4,7 +4,7 @@ import { Button } from "@/app/components/ui/button";
 import { ArrowRight} from "lucide-react";
 import Image from "next/image";
 
-export function Footer() {
+ function Footer() {
     return (
         <footer className="text-black py-12 px-4 md:px-8 bg-[#F8F8F8] font-medium mt-10">
             <div className="max-w-[1590px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-8">
@@ -79,3 +79,4 @@ export function Footer() {
         </footer>
     );
 }
+export default Footer

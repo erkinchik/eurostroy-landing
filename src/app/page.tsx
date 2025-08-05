@@ -7,7 +7,8 @@ import MapSection from '@/app/components/sections/MapSection'
 import InfoSection from "@/app/components/sections/InfoSection";
 import StoreSection from "@/app/components/sections/StoreSection";
 import Choice from "@/app/components/sections/Choice";
-import {Footer} from "@/app/layout/Footer";
+import ReviewsSection from "@/app/components/sections/ReviewsSection";
+import Footer from "@/app/layout/Footer";
 
 export default function Home() {
   return (
@@ -21,7 +22,7 @@ export default function Home() {
         <InfoSection/>
         <StoreSection/>
         <Choice/>
-        {/*<ReviewsSection/>*/}
+        <ReviewsSection/>
         <Footer/>
     </div>
   );
