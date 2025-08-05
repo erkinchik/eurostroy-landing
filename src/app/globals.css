@@ -120,3 +120,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+.container{
+  padding-inline: 15px ;
+  max-width: 1590px;
+  margin: 0 auto;
+}
