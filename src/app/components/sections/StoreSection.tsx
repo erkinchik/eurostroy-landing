@@ -2,6 +2,12 @@
 
 import Image from "next/image";
 import {Button} from "@/app/components/ui/button";
+import {ArrowRight, BadgeCheckIcon} from "lucide-react";
+import Catalog from '@/app/assets/icons/catalog.svg'
+import Filters from '@/app/assets/icons/filters.svg'
+import Tick from '@/app/assets/icons/tick.svg'
+import Delivery from '@/app/assets/icons/delivery.svg'
+import {Badge} from "@/app/components/ui/badge";
 
 function StoreSection() {
     return (
@@ -19,20 +25,55 @@ function StoreSection() {
 
             <div className="relative z-10 h-full flex items-center p-8">
                 <div className="flex-1 pr-10">
-                    <h2 className="text-4xl font-bold text-white mb-6">
+                    <h2 className="text-[42px] font-bold text-white mb-4">
                         Наш интернет-магазин
                     </h2>
-                    <p className="text-xl text-white/90 mb-8 max-w-[600px]">
+                    <p className="text-md text-white/90 mb-8 max-w-[600px]">
                         5 000+ наименований в одном пространстве
                     </p>
 
+                    <div className='flex items-center gap-2'>
+                        <Badge
+                            variant="secondary"
+                            className="bg-white text-black dark:bg-blue-600 p-[10px] text-md space-x-2"
+                        >
+                            <Catalog className="!w-6 !h-6 " />
+                            Удобный каталог
+                        </Badge>
+                        <Badge
+                            variant="secondary"
+                            className="bg-white text-black dark:bg-blue-600 p-[10px] text-md space-x-2"
+                        >
+                            <Filters className="!w-6 !h-6 " />
+                            Фильтры
+                        </Badge>
+                        <Badge
+                            variant="secondary"
+                            className="bg-white text-black dark:bg-blue-600 p-[10px] text-md space-x-2"
+                        >
+                            <Tick className="!w-6 !h-6 " />
+                            Наличие
+                        </Badge>
+                        <Badge
+                            variant="secondary"
+                            className="bg-white text-black dark:bg-blue-600 p-[10px] text-md space-x-2"
+                        >
+                            <Delivery className="!w-6 !h-6 " />
+                            Доставка
+                        </Badge>
+                    </div>
 
 
-                    <Button className="mt-8 px-8 py-4 text-lg bg-white text-blue-600 hover:bg-white/90" asChild>
-                        <a href="https://online-store-murex-ten.vercel.app/">
-                        Перейти в магазин
-                        </a>
+
+                    <a href="https://online-store-murex-ten.vercel.app/">
+                    <Button className="mt-5 flex items-center justify-between gap-2 pr-[5px] pl-[30px] rounded-full h-[60px] text-base w-[270px]">
+                        Посмотреть каталог
+                        <span className="flex items-center justify-center w-[50px] h-[50px] bg-white rounded-full">
+                                <ArrowRight className="w-4 h-4 text-black" />
+                        </span>
                     </Button>
+                    </a>
+
                 </div>
 
                 <div className="relative w-[800px] h-[445px] rounded-2xl overflow-hidden shadow-2xl">
